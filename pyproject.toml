@@ -11,6 +11,6 @@ keywords = ["deforum", "reforum", "comfyui", "comfyui-nodes", "animation", "ai-a
 Repository = "https://github.com/Stefanobeck/comfyui-reforum"
 
 [tool.comfy]
-PublisherId = "PUBLISHER_ID"
+PublisherId = "stefanobeck"
 DisplayName = "Reforum: Deforum animations for ComfyUI"
 Icon = ""
