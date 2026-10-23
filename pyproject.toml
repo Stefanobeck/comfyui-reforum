@@ -1,0 +1,16 @@
+[project]
+name = "comfyui-reforum"
+description = "Reforum: Deforum animations for ComfyUI. Unofficial, revived port of the Deforum animation engine (the AUTOMATIC1111 extension) to ComfyUI 0.40+: 2D and 3D camera motion with keyframed schedules and maths, cadence, colour coherence, Perlin noise, anti-blur, seed behaviours, keyframed prompts, Video Input, A1111 Deforum settings files. Native ComfyUI samplers and depth models (Depth Anything 3, MoGe). No extra dependencies."
+version = "0.1.0"
+license = { file = "LICENSE" }
+dependencies = []
+keywords = ["deforum", "reforum", "comfyui", "comfyui-nodes", "animation", "ai-animation", "stable-diffusion",
+            "video", "camera-motion", "keyframes"]
+
+[project.urls]
+Repository = "https://github.com/Stefanobeck/comfyui-reforum"
+
+[tool.comfy]
+PublisherId = "PUBLISHER_ID"
+DisplayName = "Reforum: Deforum animations for ComfyUI"
+Icon = ""

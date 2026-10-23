@@ -1,0 +1,125 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "flux-2-klein-4b-fp8.safetensors",
+      "weight_dtype": "default"
+    },
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "8": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen_3_4b_fp8_mixed.safetensors",
+      "type": "flux2",
+      "device": "default"
+    },
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "2": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "flux2-vae.safetensors"
+    },
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "3": {
+    "class_type": "DeforumRevivedPreset",
+    "inputs": {
+      "preset": "Klein 4B veloce 2D",
+      "prompts": "{\n    \"0\": \"a giant clockwork jellyfish floating over a flooded gothic city at dusk, tiny lanterns hanging from its tentacles, surreal, bizarre, highly detailed, cinematic\",\n    \"46\": \"a victorian tea party on the surface of the moon, elephants in tuxedos pouring tea from floating teapots, pocket watches orbiting the earth, surreal, bizarre, highly detailed, cinematic\",\n    \"92\": \"a neon cyberpunk fish market inside the ribcage of a gigantic whale, octopus merchants with paper umbrellas, a rain of glowing coins, surreal, bizarre, highly detailed, cinematic\",\n    \"138\": \"a desert of melting grand pianos under three red suns, a giant marble cat playing chess against a rusty robot knight, surreal, bizarre, highly detailed, cinematic\"\n}",
+      "max_frames": 0,
+      "W": 0,
+      "H": 0,
+      "seed": -1,
+      "positive_prompts": "",
+      "negative_prompts": "",
+      "extra_json": "{}"
+    },
+    "_meta": {
+      "title": "Deforum Preset (revived)"
+    }
+  },
+  "4": {
+    "class_type": "DeforumRevivedRender",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "clip": [
+        "8",
+        0
+      ],
+      "vae": [
+        "2",
+        0
+      ],
+      "settings": [
+        "3",
+        0
+      ],
+      "save_frames": true,
+      "batch_name": "Deforum_{timestring}",
+      "save_video": true,
+      "keep_frames_in_memory": true,
+      "init_image": [
+        "9",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Deforum Render (revived)"
+    }
+  },
+  "5": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "fps": [
+        "4",
+        2
+      ],
+      "bit_depth": "auto",
+      "color_space": "sRGB",
+      "codec": "none",
+      "images": [
+        "4",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Create Video"
+    }
+  },
+  "6": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "filename_prefix": "video/Deforum",
+      "format": "auto",
+      "codec": "auto",
+      "format.codec": "auto",
+      "video": [
+        "5",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Save Video"
+    }
+  },
+  "9": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "deforum_partenza.png"
+    },
+    "_meta": {
+      "title": "Load Image"
+    }
+  }
+}
